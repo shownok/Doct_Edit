@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Documents Content</h2>
+          <p>Here is the available content for the Topic</p>
+        </div>
+
+        <div class="row">
+
+            {% for i in roomContent %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="padding:1em">
+            <div class="icon-box iconbox-blue">
+              <h4><a class="" href="{% url 'viewDoc' pk=i.pk %}">{{i.title}}</a></h4>
+            </div>
+          </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+{% endblock %}
+
+
+

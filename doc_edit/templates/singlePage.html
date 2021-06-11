@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="about" class="about">
+          <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+              <h2>Documents Body</h2>
+              <p> This is the {{docFile.title}} related Topics</p>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-8 pt-4 pt-lg-0 content">
+                <h3>{{docFile.title}}</h3>
+                <p class="font-italic">
+                  <h3>Content:</h3> {{docFile.content | safe}}
+                </p>
+              </div>
+            </div>
+
+              <a class="" href="{% url 'editDoc' docFile.id %}"><button class="btn btn-primary">Update</button></a>
+
+          </div>
+    </section>
+
+
+{% endblock %}
